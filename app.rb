@@ -8,18 +8,18 @@ def read_file(file)
   return contents
 end
 
-x = read_file("cake.list")
+lines = read_file("cake.list")
 
 # Adding number of cake to front of each cake's name
 num = 1
-x.each { 
-  |x|
-  x.insert(0, num.to_s+": ")
+lines.each { 
+  |lines|
+  lines.insert(0, num.to_s+": ")
   num+=1
 }
 
 get '/' do
   # Replace /n with br/ so newline visible on webpage
-  x.to_s.gsub('\n', '<br/>')
-  x.join("<br/>")
+  lines.to_s.gsub('\n', '<br/>')
+  lines.join("<br/>")
 end
