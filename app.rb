@@ -2,14 +2,13 @@ require 'sinatra'
 
 # Creating json file from cake.list
 post '/' do
-  lines = File.open("cake.list").read.split("}\n").join("},")+"}"
+  lines = File.open("cake.list").read.split("\n").join("},")+"}"
   contents = JSON.parse([lines].to_s)
 end
 
 get '/' do
   erb :index
 end
-
 
 
 
