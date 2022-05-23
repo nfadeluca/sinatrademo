@@ -3,8 +3,8 @@ require 'json'
 
 # Creating json file from cake.list
 get '/cakes.json' do
-  lines = File.open("cake.list").read.split("\n").join("},")+"}"
-  contents = JSON.parse([lines].to_s).to_json
+  lines = File.open("cake.list").read.split("}\n").join("},")+"}"
+  contents = JSON.parse([lines].to_s)
 end
 
 get '/' do
