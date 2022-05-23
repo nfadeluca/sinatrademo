@@ -15,8 +15,8 @@ get '/' do
   lines.each.with_index(1) do |line, index|
     line.insert(0, index.to_s+": ")
     # Aligning all indices
-    if (index.between?(1,9)==true) then line.insert(0, "&nbsp&nbsp") end
-    if (index.between?(10,99)==true) then line.insert(0, "&nbsp") end
+    line.insert(0, "&nbsp&nbsp") if (index.between?(1,9))
+    line.insert(0, "&nbsp") if (index.between?(10,99))
   end
 
   # Replace /n with br/ so newline visible on webpage
