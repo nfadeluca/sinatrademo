@@ -43,6 +43,7 @@ get '/cakes.json' do
   contents = JSON.parse(lines.to_s)
 end
 
+# Creating index route
 get '/index' do
   erb :index
 end
