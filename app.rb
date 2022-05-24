@@ -34,13 +34,12 @@ end
 get '/cakes.json' do
   lines = read_file("cake.list")
   lines.each.with_index(1) do |line, index|
-    # Aligning all indices
     line.insert(0, "{\"name\":\"")
   end
   lines.each.with_index(1) do |line, index|
     line.insert(-2, "\"}")
   end
-  
+
   contents = JSON.parse(lines.to_s)
 end
 
