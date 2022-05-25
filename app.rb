@@ -48,7 +48,6 @@ get '/cakes.json' do
   lines.push("}")
   lines = lines.join("")
   lines = lines.gsub("\n", "<br/>")
-  
 
   data = JSON.parse(lines.to_json)
 end
