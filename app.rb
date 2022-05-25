@@ -35,14 +35,15 @@ get '/cakes.json' do
   lines = read_file("cake.list")
   lines.each.with_index(1) do |line, index|
     line.insert(0, index.to_s+":\"")
-    line.insert(0, "{")
+    line.insert(0, "{\n") if index == 1
   end
   lines.each.with_index do |line, index|
     if index == lines.length-1
-      line.insert(-1, "\"}")
+      # Do nothing here
     else
-      line.insert(-2, "\"},")
+      line.insert(-2, "\",")
     end
+    line.insert(-2, "\n}") if index == lines.length-1
   end
   data = JSON.parse(lines.to_s)
 end
