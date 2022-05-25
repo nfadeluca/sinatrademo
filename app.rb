@@ -32,22 +32,28 @@ end
 
 # Creating json file from cake.list
 get '/cakes.json' do
+
+  # Lines is only array with just the cake names
   lines = read_file("cake.list")
-  lines.each.with_index(1) do |line, index|
-    line.insert(0, index.to_s+":\"")
-  end
-  lines.each.with_index do |line, index|
-    if index == lines.length-1
-      # Do nothing here
-    else
-      line.insert(-2, "\", ")
-    end
-    line.insert(-2, "\"") if index == lines.length-1
-  end
-  lines.insert(0, "{\n")
-  lines.push("}")
-  lines = lines.join("")
-  lines = lines.gsub("\n", "<br/>")
+  lines = lines.join(",")
+  lines = lines.gsub("\n", "")
+  lines = lines.split(",")
+
+  # lines.each.with_index(1) do |line, index|
+  #   line.insert(0, index.to_s+":\"")
+  # end
+  # lines.each.with_index do |line, index|
+  #   if index == lines.length-1
+  #     # Do nothing here
+  #   else
+  #     line.insert(-2, "\", ")
+  #   end
+  #   line.insert(-2, "\"") if index == lines.length-1
+  # end
+  # lines.insert(0, "{\n")
+  # lines.push("}")
+  # lines = lines.join("")
+  # lines = lines.gsub("\n", "<br/>")
 
   data = JSON.parse(lines.to_json)
 end

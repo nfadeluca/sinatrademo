@@ -10,12 +10,17 @@
         <body>
             TEST
             <script type="text/javascript">
-
+                // Getting cakes data
                 $.getJSON('/cakes.json', function(results) {
 
                     console.log("HELLO");
 
-                }).fail( function(d, textStatus, error) {
+                })
+                /*
+                    This will prevent the getJSON from failing silently,
+                    which it will otherwise do by default
+                */
+                .fail( function(d, textStatus, error) {
                     console.error("getJSON failed, status: " + textStatus + ", error: "+error)
                 });
 
