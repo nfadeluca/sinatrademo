@@ -17,7 +17,7 @@ get '/cakes.json' do
   new_lines = []
   lines.each {|line| new_lines.push(line.chomp)}
 
-  lines.to_json
+  new_lines.to_json
 end
 
 # Creating index route
