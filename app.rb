@@ -35,9 +35,9 @@ get '/cakes.json' do
 
   # Lines is only array with just the cake names
   lines = read_file("cake.list")
-  lines = lines.join(",")
-  lines = lines.gsub("\n", "")
-  lines = lines.split(",")
+  new_lines = []
+  lines.each {|line| new_lines.push(line.chomp)}
+
 
   # lines.each.with_index(1) do |line, index|
   #   line.insert(0, index.to_s+":\"")
@@ -55,7 +55,7 @@ get '/cakes.json' do
   # lines = lines.join("")
   # lines = lines.gsub("\n", "<br/>")
 
-  data = JSON.parse(lines.to_json)
+  lines.to_json
 end
 
 # Creating index route
