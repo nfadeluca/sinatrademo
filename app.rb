@@ -11,13 +11,9 @@ end
 
 # Creating json file from cake.list
 get '/cakes.json' do
-
   # Lines is only array with just the cake names
   lines = read_file("cake.list")
-  new_lines = []
-  lines.each {|line| new_lines.push(line.chomp)}
-
-  new_lines.to_json
+  lines.map!{|x| x.chomp }.to_json
 end
 
 # Creating index route
