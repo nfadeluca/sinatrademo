@@ -7,9 +7,15 @@ get '/' do
   arr_cakes = []
 
   begin
-    # Connecting to database
+    # Connecting to the database "cakes"
     connection = PG.connect :dbname => 'cakes', :user => 'postgres'
-    arr_cakes = connection.exec 'SELECT * FROM cakes'
+    # Reading from the database into s_cakes
+    s_cakes = connection.exec 'SELECT * FROM cakes'
+    # Pushing data from cakes db into arr_cakes
+    s_cakes.each do |cake|
+      arr_cakes.push({ id: cake['cake_id'], name: cake['cake_name'] })
+    end
+    
   end
 
   erb :index
