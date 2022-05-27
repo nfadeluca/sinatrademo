@@ -1,22 +1,16 @@
 require 'sinatra'
 require 'json'
+require 'pg'
 
-# Reading contents from file into array
-def read_file(file)
-  file = File.open(file, "r")
-  contents = file.readlines
-  file.close
-  contents
-end
 
-# Creating json file from cake.list
-get '/cakes.json' do
-  # Lines is only array with just the cake names
-  lines = read_file("cake.list")
-  lines.map!{|x| x.chomp }.to_json
-end
-
-# Creating index route
 get '/' do
+  arr_cakes = []
+
+  begin
+    # Connecting to database
+    connection = PG.connect :dbname => 'cakes', :user => 'postgres'
+    arr_cakes = connection.exec 'SELECT * FROM cakes'
+  end
+
   erb :index
 end
