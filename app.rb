@@ -15,7 +15,7 @@ get '/' do
     s_cakes.each do |cake|
       arr_cakes.push({ id: cake['cake_id'], name: cake['cake_name'] })
     end
-    
+
   end
 
   erb :index
