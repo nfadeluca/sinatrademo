@@ -2,10 +2,30 @@
     <html>
 
         <head>
+            <script
+			  src="https://code.jquery.com/jquery-3.6.0.min.js"
+			  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+			  crossorigin="anonymous">
+            </script>
         </head>
 
         <body>
-            
+            <ul id = cakeList></ul>
+            <script type = "text/javascript"> 
+                // Getting cakes data using JQuery.getJSON
+                $.getJSON('/cakes.json', function(results) {
+                    for (let i = 0; i < results.length; i++) {
+                        $("#cakeList").append('<li>'+results[i].name+'</li>');
+                    }
+                })
+                /*
+                    This will prevent the getJSON from failing silently,
+                    which it will otherwise do by default
+                */
+                .fail( function(d, textStatus, error) {
+                    console.error("getJSON failed, status: " + textStatus + ", error: "+error)
+                });
+            </script> 
         </body>
 
     </html>
