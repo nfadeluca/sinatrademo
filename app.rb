@@ -26,7 +26,11 @@ get '/cakes/:id' do
   cake_to_show.to_s
 end
 
-# Creating cake with attribute name
-post '/create' do
-  
+# Creating cake with attribute name given HTTP request with JSON body
+post '/' do
+  body = JSON.parse(request.body.read)
+  arr_cakes.push({id: body["id"], name: body["name"]})
+  # Kind of funky I know, will look into better ways of doing this... (Inserting into database)
+  connection.exec("INSERT INTO cakes VALUES (" + "\'" + body["id"] + "\'" + ", " + "\'" +body["name"]+"\'"+ ");")
+  arr_cakes.to_json
 end
