@@ -18,11 +18,15 @@ get '/' do
   arr_cakes.to_json
 end
 
-# Showind based off of cake's id
+# Showing cake based off of cake's id
 get '/cakes/:id' do
-  cakeid = params["id"].to_s
+  cakeid = params["id"]
   cake_to_show = ""
-  arr_cakes.each {|cake|
-    
-  }
+  arr_cakes.each { |cake| cake_to_show = cake if cakeid == cake[:id] }
+  cake_to_show.to_s
+end
+
+# Creating cake with attribute name
+post '/create' do
+  
 end
