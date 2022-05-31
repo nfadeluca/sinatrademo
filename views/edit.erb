@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+
+        <p><%=cake%></p>
+
+        <form action="/edit/<%=cakeid%>" method="POST">
+            <input type="hidden" name="_method" value="DELETE"/>
+            <input type="submit" value="delete">
+        </form>
+        
+    </body>
+</html>
