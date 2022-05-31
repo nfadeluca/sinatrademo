@@ -5,7 +5,9 @@ require 'pg'
 
 arr_cakes = []
 # Connecting to the database "cakes"
-connection = PG.connect :dbname => 'cakes', :user => 'postgres'
+connection = PG.connect :dbname => 'd7rke7fbtlrpep', :user => 'fanpkdcdkuhdrb', \
+:host => 'ec2-54-211-255-161.compute-1.amazonaws.com', :port => 5432, \
+:password => "0469276838c7fb13274ac7dc4db039a8fef3bcba9b016884f7a22f90b71e3f12"
 # Reading from the database into s_cakes
 s_cakes = connection.exec 'SELECT * FROM cakes'
 # Pushing data from cakes db into arr_cakes
