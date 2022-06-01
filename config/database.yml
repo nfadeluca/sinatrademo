@@ -1,7 +1,13 @@
 development:
-  adapter: sqlite3
-  database: db/development.sqlite3
+  adapter: postgresql
+  database: cakes_dev
+  username: postgres
+  pool: 5
+  timeout: 5000
 
 test:
-  adapter: sqlite3
-  database: db/test.sqlite3
+  adapter: postgresql
+  database: cakes_test
+  username: postgres
+  pool: 5
+  timeout: 5000
