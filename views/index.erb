@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-    <html>
-
-        <head>
-        </head>
-
-        <body>
-            <p><%=cakes%></p>
-        </body>
-
-    </html>
+<html>
+<head>
+    <title>Cakes</title>
+</head>
+<body>
+    <% @cakes.each do |cake| %>
+    <ul>
+      <li><%= cake.cake_name %></li>
+    </ul>
+    <% end %> 
+</body>
+</html>

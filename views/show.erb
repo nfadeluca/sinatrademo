@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <title>Show Cake</title>
 </head>
 <body>
-    <p><%=cake%></p>
-    <form action="/show/<%=cakeid%>" method="POST">
+    <p><%=@cake.cake_name%></p>
+    <form action="/show/<%=@cake.cake_id%>" method="POST">
         <input type="hidden" name="_method" value="DELETE"/>
-        <input type="submit", value='delete'>
+        <input type="submit"/ value="delete">
     </form>
 </body>
 </html>
