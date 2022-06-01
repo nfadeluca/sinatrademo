@@ -7,8 +7,9 @@
         <p><%=cake%></p>
 
         <form action="/edit/<%=cakeid%>" method="POST">
-            <input type="hidden" name="_method" value="DELETE"/>
-            <input type="submit" value="delete">
+            <input type="hidden" name="_method" value="PUT"/>
+            Change Name: <input type="text" name="cakename">
+            <input type="submit"></input>
         </form>
         
     </body>
