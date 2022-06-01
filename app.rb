@@ -15,8 +15,14 @@ end
 
 get '/show/:id' do
   id = params[:id]
-  @cake = Cake.find{|c| c.cake_id == id}
+  @cake = Cake.find(id)
   erb :show
+end
+
+get '/edit/:id' do
+  id = params[:id]
+  @cake = Cake.find(id)
+  erb :edit
 end
 
 post '/new' do
@@ -25,9 +31,16 @@ post '/new' do
   redirect '/'
 end
 
+put '/edit/:id' do
+  id = params[:id]
+  @cake = Cake.find(id)
+  Cake.update(id, cake_name: params[:cakename])
+  redirect '/'
+end
+
 delete '/show/:id' do
   id = params[:id]
-  @cake = Cake.find{|c| c.cake_id == id}
+  @cake = Cake.find(id)
   @cake.destroy
   redirect '/'
 end
