@@ -6,7 +6,7 @@
 <body>
   <ul>
     <% @cakes.each do |cake| %>
-      <li><%= cake.cake_name %></li>
+      <a href="/show/<%=cake.id%>"><%= cake.cake_name %><br/></a>
     <% end %> 
   </ul>
   <br/>
