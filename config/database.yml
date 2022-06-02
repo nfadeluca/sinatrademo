@@ -1,17 +1,17 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: d7rke7fbtlrpep
-  username: fanpkdcdkuhdrb
-  password: 0469276838c7fb13274ac7dc4db039a8fef3bcba9b016884f7a22f90b71e3f12
-  host: ec2-54-211-255-161.compute-1.amazonaws.com
+  database: deskboe18ujba
+  username: wgjzhnhzmnmkxx
+  password: 3cf14f96eab942c6f4cab3a09a8a824022f97aa499235ac7f0216a98f0fea65b
+  host: ec2-44-196-174-238.compute-1.amazonaws.com
   port: 5432
 
 production:
   adapter: postgresql
   encoding: unicode
-  database: d7rke7fbtlrpep
-  username: fanpkdcdkuhdrb
-  password: 0469276838c7fb13274ac7dc4db039a8fef3bcba9b016884f7a22f90b71e3f12
-  host: ec2-54-211-255-161.compute-1.amazonaws.com
+  database: deskboe18ujba
+  username: wgjzhnhzmnmkxx
+  password: 3cf14f96eab942c6f4cab3a09a8a824022f97aa499235ac7f0216a98f0fea65b
+  host: ec2-44-196-174-238.compute-1.amazonaws.com
   port: 5432
