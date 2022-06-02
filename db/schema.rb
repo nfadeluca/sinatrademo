@@ -14,6 +14,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_01_153450) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "cakes", primary_key: "cake_id", id: :serial, force: :cascade do |t|
+    t.string "cake_name", limit: 255
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "cake_name"
   end

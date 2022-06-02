@@ -12,4 +12,4 @@ test:
   database: cakes_test
   username: postgres
   pool: 5
-  timeout: 5000
+  timeout: 5000c
