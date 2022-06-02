@@ -1,6 +1,6 @@
 require 'sinatra'
 require 'sinatra/activerecord'
-require './models'
+require './models/Cake'
 
 set :database_file, Dir.pwd+"/config/database.yml"
 
