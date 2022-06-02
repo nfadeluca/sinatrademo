@@ -7,6 +7,13 @@ development:
   host: ec2-54-211-255-161.compute-1.amazonaws.com
   port: 5432
 
+test:
+  adapter: postgresql
+  database: cakes_test
+  username: postgres
+  pool: 5
+  timeout: 5000c
+
 production:
   adapter: postgresql
   encoding: unicode
