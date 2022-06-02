@@ -5,9 +5,9 @@
 </head>
 <body>
     <p><%=@cake.cake_name%></p>
-    <form action="/show/<%=@cake.cake_id%>" method="POST">
+    <form action="/show/<%=@cake.id%>" method="POST">
         <input type="hidden" name="_method" value="DELETE"/>
-        <input type="submit"/ value="delete">
+        <input type="submit" value="delete"/>
     </form>
 </body>
 </html>

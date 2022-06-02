@@ -5,7 +5,7 @@
 </head>
 <body>
     <p><%=@cake.cake_name%></p>
-    <form action="/edit/<%=@cake.cake_id%>" method="POST">
+    <form action="/edit/<%=@cake.id%>" method="POST">
         <input type="hidden" name="_method" value="PUT"/>
         <input type="text" name="cakename"/>
         <input type="submit" value="change name"/>
